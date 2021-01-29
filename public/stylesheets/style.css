@@ -10,3 +10,7 @@ h1 {
 #link{
   text-align: right;
 }
+
+body{
+  background-image: url('images/Login and Sign Up Background.png');
+}
