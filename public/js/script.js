@@ -1,6 +1,6 @@
 $(document).ready(() => {
   function pokeSearch() {
-    const param = document.getElementById("searchVal").value;
+    const param = document.getElementById("#searchVal").value;
     const pokeURL = "http://pokeapi.co/api/v2/pokemon/" + param.toLowerCase();
     //Each # needs a matching id on the html
     $.getJSON(pokeURL, data => {
@@ -16,7 +16,6 @@ $(document).ready(() => {
     });
   }
 
-  //Need to make an empty span under the add button with id of error
   function pokeSubmit() {
     if ($("#pkmnName") === null || $("levelVal" === null)) {
       message.textContent =

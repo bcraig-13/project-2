@@ -23,4 +23,11 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, (req, res) => {
     res.render("members", { username: req.user.username });
   });
+
+  app.get("/all-pokemon", isAuthenticated, (req, res) => {
+    res.render("all-pokemon", { username: req.user.username });
+  });
+  app.get("/add-pokemon", isAuthenticated, (req, res) => {
+    res.render("add-pokemon", { username: req.user.username });
+  });
 };
