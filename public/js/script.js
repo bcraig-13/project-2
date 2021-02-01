@@ -18,14 +18,14 @@ function pokeSearch() {
   });
 }
 
-function pokeSubmit() {
-  if ($("#pkmnName") === null || $("levelVal" === null)) {
-    message.textContent =
-      "Search for a pokemon and enter an integer in the level input.";
-  } else {
-    // Insert card data into db
-  }
-}
+// function pokeSubmit() {
+//   if ($("#pkmnName") === null || $("levelVal" === null)) {
+//     message.textContent =
+//       "Search for a pokemon and enter an integer in the level input.";
+//   } else {
+//     // Insert card data into db
+//   }
+// }
 
 $("#search").on("click", pokeSearch);
 // $("#submit").on("click", pokeSubmit());
