@@ -14,3 +14,17 @@ h1 {
 body{
   background-image: url('images/Login and Sign Up Background.png');
 }
+
+#allPokemon{
+  font-size: medium;
+  font-family: 'Times New Roman', Times, serif;
+  color: yellow;
+  font-weight: 200;
+}
+
+#addPokemon{
+  font-size: medium;
+  font-family: 'Times New Roman', Times, serif;
+  color: yellow;
+  font-weight: 200;
+}
