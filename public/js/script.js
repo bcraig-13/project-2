@@ -2,7 +2,10 @@ function pokeSearch() {
   const param = $("#searchVal").val();
   const pokeURL = "http://pokeapi.co/api/v2/pokemon/" + param.toLowerCase();
   //Each # needs a matching id on the html
-
+  if ($("#searchVal").val() === "") {
+    message.textContent = "Enter a pokemon name.";
+    return;
+  }
   $.getJSON(pokeURL, data => {
     const type = data.types;
     console.log(data);
@@ -23,9 +26,9 @@ function pokeSearch() {
 //     message.textContent =
 //       "Search for a pokemon and enter an integer in the level input.";
 //   } else {
-//     // Insert card data into db
+    
 //   }
 // }
 
 $("#search").on("click", pokeSearch);
-// $("#submit").on("click", pokeSubmit());
+// $("#submit").on("click", pokeSubmit);
