@@ -1,8 +1,8 @@
 $(document).ready(() => {
   function pokeSearch() {
-    let param = document.getElementById("searchVal").value;
-    let pokeURL = "http://pokeapi.co/api/v2/pokemon/" + param.toLowerCase();
-
+    const param = document.getElementById("searchVal").value;
+    const pokeURL = "http://pokeapi.co/api/v2/pokemon/" + param.toLowerCase();
+    //Each # needs a matching id on the html
     $.getJSON(pokeURL, function(data) {
       let type = data.types;
       $("#sprite").html(`<img src="${data.sprites.front_default}">`);
@@ -16,9 +16,11 @@ $(document).ready(() => {
     });
   }
 
+  //Need to make an empty span under the add button with id of error
   function pokeSubmit() {
-    if($("#nameSpan") === null || $("levelVal" === null)) {
-      error.textContent = "Search for a pokemon and enter an integer in the level input.";
+    if ($("#nameSpan") === null || $("levelVal" === null)) {
+      error.textContent =
+        "Search for a pokemon and enter an integer in the level input.";
     } else {
       // Insert card data into db
     }
