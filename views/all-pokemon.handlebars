@@ -1,21 +1,28 @@
-<nav class="navbar navbar-default">
-<div class="container-fluid">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="/logout">
-      
-    </a>
-  </div>
-</div>
-</nav>
-<div class="container">
+<h1>Your pokemon!</h1>
+
+<div class="container-md">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h2 style="text-align: center;">All your Pokemon!</h2>
-    </div>
+    <ul>
+      {{#each pokebase }}
+      <li>
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem;">
+            <img src="{{image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">name: {{this.name}}</h5>
+              <p class="card-text">type: {{this.type}}</p>
+              <p class="card-text">level: {{this.level}}</p>
+              <a href="#" class="btn btn-primary">remove</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      {{/each}}
+    </ul>
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   
-    
-    
+<form action="/all-pokemon" method="POST">
+  <textarea type="text" name="pokebase"></textarea>
+
+</form>
