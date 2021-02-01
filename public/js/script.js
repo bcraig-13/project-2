@@ -3,23 +3,23 @@ $(document).ready(() => {
     const param = document.getElementById("searchVal").value;
     const pokeURL = "http://pokeapi.co/api/v2/pokemon/" + param.toLowerCase();
     //Each # needs a matching id on the html
-    $.getJSON(pokeURL, function(data) {
-      let type = data.types;
-      $("#sprite").html(`<img src="${data.sprites.front_default}">`);
-      $("#pkmn-name").html(data.name);
+    $.getJSON(pokeURL, data => {
+      const type = data.types;
+      $(".card-img-top").html(`<img src="${data.sprites.front_default}">`);
+      $("#pkmnName").html(data.name);
       if (type.length === 2) {
-        $("#pkmn-type1").html(type[0].type.name);
-        $("#pkmn-type2").html(type[1].type.name);
+        $("#typeOne").html(type[0].type.name);
+        $("#typeTwo").html(type[1].type.name);
       } else {
-        $("#pkmn-type1").html(type[0].type.name);
+        $("#typeOne").html(type[0].type.name);
       }
     });
   }
 
   //Need to make an empty span under the add button with id of error
   function pokeSubmit() {
-    if ($("#nameSpan") === null || $("levelVal" === null)) {
-      error.textContent =
+    if ($("#pkmnName") === null || $("levelVal" === null)) {
+      message.textContent =
         "Search for a pokemon and enter an integer in the level input.";
     } else {
       // Insert card data into db
