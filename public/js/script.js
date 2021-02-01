@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  function pokeSubmit() {
+  function pokeSearch() {
     let param = document.getElementById("searchVal").value;
     let pokeURL = "http://pokeapi.co/api/v2/pokemon/" + param.toLowerCase();
 
@@ -15,4 +15,15 @@ $(document).ready(() => {
       }
     });
   }
+
+  function pokeSubmit() {
+    if($("#nameSpan") === null || $("levelVal" === null)) {
+      error.textContent = "Search for a pokemon and enter an integer in the level input.";
+    } else {
+      // Insert card data into db
+    }
+  }
+
+  $("#search").on("click", pokeSearch());
+  $("#submit").on("click", pokeSubmit());
 });
