@@ -28,3 +28,16 @@ body{
   color: yellow!important;
   font-size: 25px;
 }
+
+#pkmnName{
+  text-transform: capitalize;
+
+}
+#typeOne{
+  text-transform: uppercase;
+}
+
+#typeTwo{
+  text-transform: uppercase;
+
+}
