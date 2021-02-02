@@ -18,18 +18,6 @@ function pokeSearch() {
     } else {
       $("#typeOne").html(type[0].type.name);
     }
-    //save to database
-    console.log($("#levelVal").val());
-    $.ajax({
-      type: "POST",
-      url: "/api/pokemon",
-      data: {
-        name: data.name,
-        types: type[0].type.name + type[1].type.name,
-        level: parseInt($("#level").val()),
-        image: data.sprites.front_default
-      }
-    });
   });
 }
 
