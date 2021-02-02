@@ -1,56 +1,33 @@
 <div class="container">
-    <br>
-    <img src="https://fontmeme.com/permalink/210201/be26160f532f336200b80e62113dcc4a.png" alt="pokemon-font" id="addPokemon">
-    <br>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <div class="input-group">
-                <div class="form-outline">
-                    <input type="search" id="searchVal" class="form-control" />
-                    {{!-- <label class="form-label" for="form1"></label> --}}
-                </div>
-                <button id="search" type="button" class="btn btn-primary" style="width: 210px; height: 38px;">
-                    <i class="fas fa-search">Where's that pokemon?!</i>
-                </button>
-            </div>
-            <br>
-            <div class="card" style="width: 26rem; height: 40rem; align-self: center;">
-                <img src="stylesheets/images/screen.jpg" class="card-img-top" alt="empty screen">
-                <div class="card-body">
-                    <h5 class="card-title">Name: <span id="pkmnName"></span></h5>
-                    <p class="card-text">Type: <span id="typeOne"></span><span id="typeTwo"></span></p>
-                    <p class="card-text">Level: <input type="number" id="level"></p>
-                    <p class="card-text"></p>
-                </div>
-            </div>
-            <button type="button" class="btn btn-primary" style="margin-left: 140px; margin-top: 5px;">
-                <i class="fas fa-search">Add to collection</i>
-            </button>
-            <span id="message"></span>
+  <br>
+  <img src="https://fontmeme.com/permalink/210201/be26160f532f336200b80e62113dcc4a.png" alt="pokemon-font"
+    id="addPokemon">
+  <br>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="input-group">
+        <div class="form-outline">
+          <input type="search" id="searchVal" class="form-control" />
+          {{!-- <label class="form-label" for="form1"></label> --}}
         </div>
         <button id="search" type="button" class="btn btn-primary" style="width: 210px; height: 38px;">
           <i class="fas fa-search">Where's that pokemon?!</i>
         </button>
       </div>
-      <div>
-        <span id="message"></span>
-      </div>
+      <br>
       <div class="card" style="width: 26rem; height: 40rem; align-self: center;">
-        <img src="https://lh3.googleusercontent.com/proxy/vxURY5L6dxUj9JOB6upfgkRNJBDG4qZKK3cihzzigye60zCX2XoBMka8YWNQ6xeZpqPv-4PAUS-pA_hVvsiNnI7cFYz6xbjGiHl9hpV7zVAm9SwKqEob" id="sprite" class="card-img-top" alt="empty screen">
+        <img id="sprite" src="https://lh3.googleusercontent.com/proxy/vxURY5L6dxUj9JOB6upfgkRNJBDG4qZKK3cihzzigye60zCX2XoBMka8YWNQ6xeZpqPv-4PAUS-pA_hVvsiNnI7cFYz6xbjGiHl9hpV7zVAm9SwKqEob" class="card-img-top" alt="empty screen">
         <div class="card-body">
           <h5 class="card-title">Name: <span id="pkmnName"></span></h5>
           <p class="card-text">Type: <span id="typeOne"></span> / <span id="typeTwo"></span></p>
-          <p class="card-text">Level: <input type="number" id="levelVal"></p>
+          <p class="card-text">Level: <input type="number" id="level"></p>
           <p class="card-text"></p>
         </div>
       </div>
-      <button type="button" id="submit" class="btn btn-primary" style="margin-left: 140px; margin-top: 5px;">
+      <button type="button" class="btn btn-primary" style="margin-left: 140px; margin-top: 5px;">
         <i class="fas fa-search">Add to collection</i>
       </button>
     </div>
-    <div class="col-md-4"> </div>
-  </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
