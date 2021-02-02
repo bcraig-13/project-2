@@ -6,7 +6,7 @@ function pokeSearch() {
     message.textContent = "Enter a pokemon name.";
     return;
   }
-  $.getJSON(pokeURL, (data) => {
+  $.getJSON(pokeURL, data => {
     const type = data.types;
     console.log(data);
     $("#sprite").attr("src", data.sprites.front_default);
@@ -18,6 +18,18 @@ function pokeSearch() {
     } else {
       $("#typeOne").html(type[0].type.name);
     }
+    //save to database
+    console.log($("#level").val());
+    $.ajax({
+      type: "POST",
+      url: "/api/pokemon",
+      data: {
+        name: data.name,
+        types: type[0].type.name + type[1].type.name,
+        level: parseInt($("#level").val()),
+        image: data.sprites.front_default
+      }
+    });
   });
 }
 

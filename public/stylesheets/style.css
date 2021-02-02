@@ -23,7 +23,8 @@ body{
 }
 
 .nav-link {
-  font-family: oswald;
-  font-weight: 100;
-  color: yellow;
+  font-family: Oswald, serif;
+  font-weight: 800;
+  color: yellow!important;
+  font-size: 25px;
 }
