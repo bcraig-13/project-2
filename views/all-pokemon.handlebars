@@ -4,7 +4,7 @@
 <div class="container-md">
   <div class="row">
     <ul>
-      {{#each pokebase }}
+      {{#each pokemons }}
       <li>
         <div class="col-md-4">
           <div class="card" style="width: 18rem;">
@@ -22,7 +22,7 @@
     </ul>
   </div>
 </div>
-<form action="/all-pokemon" method="POST">
+<form action="/all-pokemon" method="GET">
   <textarea type="text" name="pokebase"></textarea>
 
 </form>
