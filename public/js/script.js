@@ -1,8 +1,7 @@
 function pokeSearch() {
   const param = $("#searchVal").val();
   const pokeURL = "http://pokeapi.co/api/v2/pokemon/" + param.toLowerCase();
-  //Each # needs a matching id on the html
-  // message.textContent = "";
+
   if ($("#searchVal").val() === "") {
     message.textContent = "Enter a pokemon name.";
     return;
