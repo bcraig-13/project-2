@@ -6,7 +6,7 @@ function pokeSearch() {
     message.textContent = "Enter a pokemon name.";
     return;
   }
-  $.getJSON(pokeURL, data => {
+  $.getJSON(pokeURL, (data) => {
     const type = data.types;
     console.log(data);
     $(".card-img-top").attr("src", data.sprites.front_default);
@@ -21,17 +21,17 @@ function pokeSearch() {
   });
 }
 
-// function pokeSubmit() {
-//   if ($("#pkmnName") === null || $("levelVal" === null)) {
-//     message.textContent =
-//       "Search for a pokemon and enter an integer in the level input.";
-//       return;
-//   }
-//     //Code here to add to database
-//   }
-//   message.textContent = $("#pkmnName").val() + " was added to your collection!";
+function pokeSubmit() {
+  if ($("#pkmnName") === null || $("levelVal" === null)) {
+    message.textContent =
+      "Search for a pokemon and enter an integer in the level input.";
+      return;
+  }
+    
+  }
+  message.textContent = $("#pkmnName").val() + " was added to your collection!";
 
-// }
+}
 
 function clearMsg() {
   message.textContent = "";
