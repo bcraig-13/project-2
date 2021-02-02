@@ -29,15 +29,15 @@ body{
   font-size: 25px;
 }
 
-#pkmnName{
+#pkmnName, .card-title{
   text-transform: capitalize;
 
 }
-#typeOne{
+#typeOne, .card-text{
   text-transform: uppercase;
 }
 
-#typeTwo{
+#typeTwo, .card-text{
   text-transform: uppercase;
 
 }

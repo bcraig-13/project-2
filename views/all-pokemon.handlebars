@@ -3,26 +3,20 @@
 
 <div class="container-md">
   <div class="row">
-    <ul>
       {{#each pokemons }}
-      <li>
         <div class="col-md-4">
           <div class="card" style="width: 18rem;">
             <img src="{{this.sprite}}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Name: {{this.name}}</h5>
-              <p class="card-text">Type: {{this.type}}</p>
+              <p class="card-text">Type: {{this.typeOne}} / {{this.typeTwo}}</p>
               <p class="card-text">Level: {{this.level}}</p>
               <a href="#" class="btn btn-primary">Remove</a>
             </div>
           </div>
         </div>
-      </li>
       {{/each}}
-    </ul>
   </div>
 </div>
 <form action="/all-pokemon" method="GET">
-  <textarea type="text" name="pokebase"></textarea>
-
 </form>
