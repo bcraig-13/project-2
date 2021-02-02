@@ -8,12 +8,12 @@
       <li>
         <div class="col-md-4">
           <div class="card" style="width: 18rem;">
-            <img src="{{image}}" class="card-img-top" alt="...">
+            <img src="{{this.sprite}}" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">name: {{this.name}}</h5>
-              <p class="card-text">type: {{this.type}}</p>
-              <p class="card-text">level: {{this.level}}</p>
-              <a href="#" class="btn btn-primary">remove</a>
+              <h5 class="card-title">Name: {{this.name}}</h5>
+              <p class="card-text">Type: {{this.type}}</p>
+              <p class="card-text">Level: {{this.level}}</p>
+              <a href="#" class="btn btn-primary">Remove</a>
             </div>
           </div>
         </div>
@@ -22,7 +22,6 @@
     </ul>
   </div>
 </div>
-
 <form action="/all-pokemon" method="POST">
   <textarea type="text" name="pokebase"></textarea>
 

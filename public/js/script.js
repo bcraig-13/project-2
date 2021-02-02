@@ -1,13 +1,16 @@
 function pokeSearch() {
   const param = $("#searchVal").val();
   const pokeURL = "http://pokeapi.co/api/v2/pokemon/" + param.toLowerCase();
-  //Each # needs a matching id on the html
 
+  if ($("#searchVal").val() === "") {
+    message.textContent = "Enter a pokemon name.";
+    return;
+  }
   $.getJSON(pokeURL, data => {
     const type = data.types;
     console.log(data);
-    $(".card-img-top").attr("src", data.sprites.front_default);
-    $(".card-img-top").attr("alt", data.name);
+    $("#sprite").attr("src", data.sprites.front_default);
+    $("#sprite").attr("alt", data.name);
     $("#pkmnName").html(data.name);
     if (type.length === 2) {
       $("#typeOne").html(type[0].type.name);
@@ -29,4 +32,46 @@ function pokeSearch() {
     });
   });
 }
+
+function pokeSubmit(event) {
+  event.preventDefault();
+  if ($("#pkmnName").text() === "" || $("#levelVal").val() === "") {
+    message.textContent =
+      "Search for a pokemon and enter an integer in the level input.";
+    // return;
+  } else {
+    const addPokemon = {
+      sprite: $("#sprite").attr("src"),
+      name: $("#pkmnName").text(),
+      typeOne: $("#typeOne").text(),
+      typeTwo: $("#typeTwo").text(),
+      level: $("#levelVal").val()
+    };
+    console.log(addPokemon);
+    $.post("/api/pokemon", addPokemon, clearCard);
+    message.textContent =
+      $("#pkmnName").text() + " was added to your collection!";
+  }
+}
+
+function clearMsg() {
+  message.textContent = "";
+  return;
+}
+
+function clearCard() {
+  $("#sprite").attr(
+    "src",
+    "https://lh3.googleusercontent.com/proxy/vxURY5L6dxUj9JOB6upfgkRNJBDG4qZKK3cihzzigye60zCX2XoBMka8YWNQ6xeZpqPv-4PAUS-pA_hVvsiNnI7cFYz6xbjGiHl9hpV7zVAm9SwKqEob"
+  ); //add url for pokeball image
+  $("#sprite").attr("alt", "Pokeball");
+  $("#pkmnName").html();
+  $("#typeOne").html();
+  $("#typeTwo").html();
+  $("#levelVal").val("");
+}
+
+$("#searchVal").on("click", clearMsg);
+$("#levelVal").on("click", clearMsg);
 $("#search").on("click", pokeSearch);
+$("#submit").on("click", pokeSubmit);

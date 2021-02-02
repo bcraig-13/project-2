@@ -30,6 +30,28 @@ module.exports = function(app) {
       });
   });
 
+  app.post("/api/pokemon", (req, res) => {
+    db.Pokemon.create({
+      sprite: req.body.sprite,
+      name: req.body.name,
+      typeOne: req.body.typeOne,
+      typeTwo: req.body.typeTwo,
+      level: req.body.level
+    })
+      .then(() => {
+        res.send("Added to db");
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  });
+
+  app.get("/api/pokemon", (req, res) => {
+    db.Pokemon.findAll({}).then(dbPokemon => {
+      res.json(dbPokemon);
+    });
+  });
+
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
