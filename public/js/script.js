@@ -21,22 +21,25 @@ function pokeSearch() {
   });
 }
 
-function pokeSubmit() {
-  if ($("#pkmnName") === null || $("#levelVal") === null) {
+function pokeSubmit(event) {
+  event.preventDefault();
+  if ($("#pkmnName").text() === "" || $("#levelVal").val() === "") {
     message.textContent =
       "Search for a pokemon and enter an integer in the level input.";
-      return;
-  }
+    // return;
+  } else {
     const addPokemon = {
-    sprite: $("#sprite").attr("src"),
-    name: $("#pkmnName").val(),
-    typeOne: $("#typeOne").val(),
-    typeTwo: $("#typeTwo").val(),
-    level: $("#levelVal").val()
-    }
+      sprite: $("#sprite").attr("src"),
+      name: $("#pkmnName").text(),
+      typeOne: $("#typeOne").text(),
+      typeTwo: $("#typeTwo").text(),
+      level: $("#levelVal").text(),
+    };
+    console.log(addPokemon);
+    $.post("/api/pokemon", addPokemon);
+    message.textContent =
+      $("#pkmnName").text() + " was added to your collection!";
   }
-  message.textContent = $("#pkmnName").val() + " was added to your collection!";
-
 }
 
 function clearMsg() {
@@ -44,6 +47,15 @@ function clearMsg() {
   return;
 }
 
+function clearCard() {
+  $("#sprite").attr("src", ""); //add url for pokeball image
+  $("#sprite").attr("alt", "");
+  $("#pkmnName").html();
+  $("#typeOne").html();
+  $("#typeTwo").html();
+}
+
 $("#searchVal").on("click", clearMsg);
+$("#levelVal").on("click", clearMsg);
 $("#search").on("click", pokeSearch);
-// $("#submit").on("click", pokeSubmit);
+$("#submit").on("click", pokeSubmit);
