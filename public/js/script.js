@@ -15,17 +15,18 @@ function pokeSearch() {
     } else {
       $("#typeOne").html(type[0].type.name);
     }
+    //save to database
+    console.log($("#level").val());
+    $.ajax({
+      type: "POST",
+      url: "/api/pokemon",
+      data: {
+        name: data.name,
+        types: type[0].type.name + type[1].type.name,
+        level: parseInt($("#level").val()),
+        image: data.sprites.front_default
+      }
+    });
   });
 }
-
-// function pokeSubmit() {
-//   if ($("#pkmnName") === null || $("levelVal" === null)) {
-//     message.textContent =
-//       "Search for a pokemon and enter an integer in the level input.";
-//   } else {
-//     // Insert card data into db
-//   }
-// }
-
 $("#search").on("click", pokeSearch);
-// $("#submit").on("click", pokeSubmit());
