@@ -6,10 +6,10 @@
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
+      <span id="message"></span>
       <div class="input-group">
         <div class="form-outline">
           <input type="search" id="searchVal" class="form-control" />
-          {{!-- <label class="form-label" for="form1"></label> --}}
         </div>
         <button id="search" type="button" class="btn btn-primary" style="width: 210px; height: 38px;">
           <i class="fas fa-search">Where's that pokemon?!</i>
@@ -21,12 +21,12 @@
         <div class="card-body">
           <h5 class="card-title">Name: <span id="pkmnName"></span></h5>
           <p class="card-text">Type: <span id="typeOne"></span> / <span id="typeTwo"></span></p>
-          <p class="card-text">Level: <input type="number" id="level"></p>
+          <p class="card-text">Level: <input type="number" id="levelVal"></p>
           <p class="card-text"></p>
         </div>
       </div>
       <button type="button" class="btn btn-primary" style="margin-left: 140px; margin-top: 5px;">
-        <i class="fas fa-search">Add to collection</i>
+        <i class="fas fa-search" id="submit">Add to collection</i>
       </button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
