@@ -33,7 +33,7 @@ function pokeSubmit(event) {
       name: $("#pkmnName").text(),
       typeOne: $("#typeOne").text(),
       typeTwo: $("#typeTwo").text(),
-      level: $("#levelVal").val(),
+      level: $("#levelVal").val()
     };
     console.log(addPokemon);
     $.post("/api/pokemon", addPokemon, clearCard);
