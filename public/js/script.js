@@ -1,6 +1,6 @@
 function pokeSearch() {
   const param = $("#searchVal").val();
-  const pokeURL = "http://pokeapi.co/api/v2/pokemon/" + param.toLowerCase();
+  const pokeURL = "https://pokeapi.co/api/v2/pokemon/" + param.toLowerCase();
 
   if ($("#searchVal").val() === "") {
     message.textContent = "Enter a pokemon name.";
@@ -19,7 +19,7 @@ function pokeSearch() {
       $("#typeOne").html(type[0].type.name);
     }
     //save to database
-    console.log($("#level").val());
+    console.log($("#levelVal").val());
     $.ajax({
       type: "POST",
       url: "/api/pokemon",
@@ -35,7 +35,7 @@ function pokeSearch() {
 
 function pokeSubmit(event) {
   event.preventDefault();
-  if ($("#pkmnName").text() === "" || $("#levelVal").val() === "") {
+  if ($("#pkmnName").text() === "" || !$("#levelVal").val()) {
     message.textContent =
       "Search for a pokemon and enter an integer in the level input.";
   } else {
