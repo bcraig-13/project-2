@@ -33,10 +33,10 @@ function pokeSubmit(event) {
       name: $("#pkmnName").text(),
       typeOne: $("#typeOne").text(),
       typeTwo: $("#typeTwo").text(),
-      level: $("#levelVal").text(),
+      level: $("#levelVal").val(),
     };
     console.log(addPokemon);
-    $.post("/api/pokemon", addPokemon);
+    $.post("/api/pokemon", addPokemon, clearCard);
     message.textContent =
       $("#pkmnName").text() + " was added to your collection!";
   }
@@ -48,11 +48,15 @@ function clearMsg() {
 }
 
 function clearCard() {
-  $("#sprite").attr("src", ""); //add url for pokeball image
-  $("#sprite").attr("alt", "");
+  $("#sprite").attr(
+    "src",
+    "https://lh3.googleusercontent.com/proxy/vxURY5L6dxUj9JOB6upfgkRNJBDG4qZKK3cihzzigye60zCX2XoBMka8YWNQ6xeZpqPv-4PAUS-pA_hVvsiNnI7cFYz6xbjGiHl9hpV7zVAm9SwKqEob"
+  ); //add url for pokeball image
+  $("#sprite").attr("alt", "Pokeball");
   $("#pkmnName").html();
   $("#typeOne").html();
   $("#typeTwo").html();
+  $("#levelVal").val("");
 }
 
 $("#searchVal").on("click", clearMsg);
