@@ -38,7 +38,6 @@ function pokeSubmit(event) {
   if ($("#pkmnName").text() === "" || $("#levelVal").val() === "") {
     message.textContent =
       "Search for a pokemon and enter an integer in the level input.";
-    // return;
   } else {
     const addPokemon = {
       sprite: $("#sprite").attr("src"),
@@ -63,12 +62,13 @@ function clearCard() {
   $("#sprite").attr(
     "src",
     "https://lh3.googleusercontent.com/proxy/vxURY5L6dxUj9JOB6upfgkRNJBDG4qZKK3cihzzigye60zCX2XoBMka8YWNQ6xeZpqPv-4PAUS-pA_hVvsiNnI7cFYz6xbjGiHl9hpV7zVAm9SwKqEob"
-  ); //add url for pokeball image
+  );
   $("#sprite").attr("alt", "Pokeball");
-  $("#pkmnName").html();
-  $("#typeOne").html();
-  $("#typeTwo").html();
+  $("#pkmnName").html("");
+  $("#typeOne").html("");
+  $("#typeTwo").html("");
   $("#levelVal").val("");
+  $("#searchVal").val("");
 }
 
 $("#searchVal").on("click", clearMsg);

@@ -31,12 +31,16 @@ module.exports = function(app) {
   });
 
   app.post("/api/pokemon", (req, res) => {
+    if (!req.user) {
+      return res.status(401).end("You must be logged in.");
+    }
     db.Pokemon.create({
       sprite: req.body.sprite,
       name: req.body.name,
       typeOne: req.body.typeOne,
       typeTwo: req.body.typeTwo,
-      level: req.body.level
+      level: req.body.level,
+      UserId: req.user.id
     })
       .then(() => {
         res.send("Added to db");
@@ -74,17 +78,10 @@ module.exports = function(app) {
   });
 
   // Route for getting some data about our user to be used client side
-  app.post("/api/pokemon", (req, res) => {
-    if (!req.user) {
-      // The user is not logged in, send back an empty object
-      res.json({});
-    } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
-      console.log(req.user);
-      db.Pokemon.create(req.body).then(() => {
-        res.json({});
-      });
-    }
+
+  app.get("/api/all-pokemon", (req, res) => {
+    db.Pokemon.findAll({}).then(dbPokemon => {
+      res.json(dbPokemon);
+    });
   });
 };
