@@ -6,7 +6,7 @@ function pokeSearch() {
     message.textContent = "Enter a pokemon name.";
     return;
   }
-  $.getJSON(pokeURL, data => {
+  $.getJSON(pokeURL, (data) => {
     const type = data.types;
     console.log(data);
     $("#sprite").attr("src", data.sprites.front_default);
@@ -32,7 +32,7 @@ function pokeSubmit(event) {
       name: $("#pkmnName").text(),
       typeOne: $("#typeOne").text(),
       typeTwo: $("#typeTwo").text(),
-      level: $("#levelVal").val()
+      level: $("#levelVal").val(),
     };
     console.log(addPokemon);
     $.post("/api/pokemon", addPokemon, clearCard);
@@ -60,15 +60,13 @@ function clearCard() {
 }
 
 function removePkmn() {
-  $(".delete-pkmn").on("click", function() {
-    const id = $(this).data("id");
-    // Send the DELETE request.
-    $.ajax(`/api/all-pokemon/${id}`, {
-      type: "DELETE"
-    }).then(() => {
-      // Reload the page to get the updated list
-      location.reload();
-    });
+  const id = $(this).data("id");
+  // Send the DELETE request.
+  $.ajax(`/api/all-pokemon/${id}`, {
+    type: "DELETE"
+  }).then(() => {
+    // Reload the page to get the updated list
+    location.reload();
   });
 }
 
