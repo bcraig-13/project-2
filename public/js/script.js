@@ -8,7 +8,6 @@ function pokeSearch() {
   }
   $.getJSON(pokeURL, data => {
     const type = data.types;
-    console.log(data);
     $("#sprite").attr("src", data.sprites.front_default);
     $("#sprite").attr("alt", data.name);
     $("#pkmnName").html(data.name);
@@ -34,7 +33,6 @@ function pokeSubmit(event) {
       typeTwo: $("#typeTwo").text(),
       level: $("#levelVal").val()
     };
-    console.log(addPokemon);
     $.post("/api/pokemon", addPokemon, clearCard);
     message.textContent =
       $("#pkmnName").text() + " was added to your collection!";
@@ -47,10 +45,7 @@ function clearMsg() {
 }
 
 function clearCard() {
-  $("#sprite").attr(
-    "src",
-    "https://lh3.googleusercontent.com/proxy/vxURY5L6dxUj9JOB6upfgkRNJBDG4qZKK3cihzzigye60zCX2XoBMka8YWNQ6xeZpqPv-4PAUS-pA_hVvsiNnI7cFYz6xbjGiHl9hpV7zVAm9SwKqEob"
-  );
+  $("#sprite").attr("src", "/js/pokeballimg.png");
   $("#sprite").attr("alt", "Pokeball");
   $("#pkmnName").html("");
   $("#typeOne").html("");
@@ -67,7 +62,7 @@ function removePkmn() {
     location.reload();
   });
 }
-//Problem with this function???
+
 function updatePkmn() {
   const level = $(this)
     .parent()
