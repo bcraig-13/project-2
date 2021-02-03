@@ -25,7 +25,7 @@ module.exports = function(app) {
       .then(() => {
         res.redirect(307, "/api/login");
       })
-      .catch(err => {
+      .catch((err) => {
         res.status(401).json(err);
       });
   });
@@ -89,6 +89,16 @@ module.exports = function(app) {
     db.Pokemon.destroy({
       where: {
         id: req.params.id
+      }
+    }).then(dbPokemon => {
+      res.json(dbPokemon);
+    });
+  });
+
+  app.put("/api/all-pokemon", (req, res) => {
+    db.Pokemon.update(req.body, {
+      where: {
+        id: req.body.id
       }
     }).then(dbPokemon => {
       res.json(dbPokemon);

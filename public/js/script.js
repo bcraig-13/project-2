@@ -70,8 +70,19 @@ function removePkmn() {
   });
 }
 
+function updatePkmn() {
+  const id = $(this).data("id");
+  // Send the DELETE request.
+  $.ajax(`/api/all-pokemon/${id}`, {
+    type: "UPDATE"
+  }).then(() => {
+    location.reload();
+  });
+}
+
 $("#searchVal").on("click", clearMsg);
 $("#levelVal").on("click", clearMsg);
 $("#search").on("click", pokeSearch);
 $("#submit").on("click", pokeSubmit);
 $(".delete-pkmn").on("click", removePkmn);
+$(".update-pkmn").on("click", updatePkmn);
