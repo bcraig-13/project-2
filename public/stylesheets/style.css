@@ -46,3 +46,11 @@ body{
   font-family: Oswald, serif;
   font-weight: bold;
 }
+
+#level {
+  display: inline-block;
+}
+
+input {
+  width:30px;
+}
