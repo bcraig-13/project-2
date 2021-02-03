@@ -23,3 +23,6 @@ Report any issues on the issues page on github for bcraig-13/poke-base
 ## Deployed App 
 https://poke-base-app.herokuapp.com/
 ## Images of Deployed App
+
+![All Pokemon](images/Capture.PNG)
+![Adding Pokemon](/public/stylesheets/images/View All.PNG)
