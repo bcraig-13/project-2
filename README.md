@@ -1,18 +1,25 @@
-# Sequelize Passport Example
+# PokeBase
 
-Use this as a starter for Project 2. Includes configuration for Travis CI, and ESLint. Provides a example login, signup and user pages which should be replaced with implementation for your app. Be sure to read the instructions below for deployment on Heroku and running the app locally.
-
-## Deployment
-
-This app is configured for using GitHub with Travis CI for version control and CI. The project is ready for deployment on Heroku. A JawsDB instance must be provisioned for the Heroku app.
-
-Add a `SERVER_SECRET` to the Heroku config for the app. (See [Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars) to learn how.)
-
-## Running Locally
-
-- Update username, password, and database fields in `/config/config.json` for local MySQL server connection.
-- Create a `.env` file in the root folder of the project. The file must include the following:
-  ```
-  SERVER_SECRET = <your_secret_for_session_signing>
-  ```
-- Run `npm run watch` to start development server using nodemon.
+* [How it works](#work)
+* [Install](#install)
+* [Credits](#credits)
+* [License](#license)
+# How it works 
+Allows trainers to store pokemon in there personal database and keep track of type and level of there pokemon. 
+## Install
+You can use our app at this link: https://poke-base-app.herokuapp.com/
+## Instructions
+Follow our form to create new pokemon and then choose to update or delete those pokemon. 
+## Credits
+Elijah Davis, Brandon Craig, Timothy Smith
+## License 
+N/A
+## Reporting issues and making contributions 
+Report any issues on the issues page on github for bcraig-13/poke-base
+# Contact
+* Github : bcraig-13
+* Github : ElijahIG
+* Github : TimothySmith66 
+## Deployed App 
+https://poke-base-app.herokuapp.com/
+## Images of Deployed App
