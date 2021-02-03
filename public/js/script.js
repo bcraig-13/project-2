@@ -1,4 +1,5 @@
 function pokeSearch() {
+  window.animateSearch();
   const param = $("#searchVal").val();
   const pokeURL = "https://pokeapi.co/api/v2/pokemon/" + param.toLowerCase();
 
