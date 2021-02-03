@@ -45,6 +45,7 @@ body{
 #message {
   font-family: Oswald, serif;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 #level {
@@ -52,5 +53,5 @@ body{
 }
 
 input {
-  width:30px;
+  width:60px;
 }

@@ -61,18 +61,15 @@ function clearCard() {
 
 function removePkmn() {
   const id = $(this).data("id");
-  // Send the DELETE request.
   $.ajax(`/api/all-pokemon/${id}`, {
     type: "DELETE"
   }).then(() => {
-    // Reload the page to get the updated list
     location.reload();
   });
 }
-
+//Problem with this function???
 function updatePkmn() {
   const id = $(this).data("id");
-  // Send the DELETE request.
   $.ajax(`/api/all-pokemon/${id}`, {
     type: "UPDATE"
   }).then(() => {
