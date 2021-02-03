@@ -84,4 +84,14 @@ module.exports = function(app) {
       res.json(dbPokemon);
     });
   });
+
+  app.delete("/api/all-pokemon/:id", (req, res) => {
+    db.Pokemon.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbPokemon => {
+      res.json(dbPokemon);
+    });
+  });
 };

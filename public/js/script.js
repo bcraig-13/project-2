@@ -59,6 +59,19 @@ function clearCard() {
   $("#searchVal").val("");
 }
 
+function removePkmn() {
+  $(".delete-pkmn").on("click", function() {
+    const id = $(this).data("id");
+    // Send the DELETE request.
+    $.ajax(`/api/all-pokemon/${id}`, {
+      type: "DELETE"
+    }).then(() => {
+      // Reload the page to get the updated list
+      location.reload();
+    });
+  });
+}
+
 $("#searchVal").on("click", clearMsg);
 $("#levelVal").on("click", clearMsg);
 $("#search").on("click", pokeSearch);
@@ -80,3 +93,4 @@ $("#search").click(() => {
       springDeceleration: 0.8
     });
 });
+$(".delete-pkmn").on("click", removePkmn);
