@@ -6,7 +6,7 @@ function pokeSearch() {
     message.textContent = "Enter a pokemon name.";
     return;
   }
-  $.getJSON(pokeURL, data => {
+  $.getJSON(pokeURL, (data) => {
     const type = data.types;
     console.log(data);
     $("#sprite").attr("src", data.sprites.front_default);
@@ -32,7 +32,7 @@ function pokeSubmit(event) {
       name: $("#pkmnName").text(),
       typeOne: $("#typeOne").text(),
       typeTwo: $("#typeTwo").text(),
-      level: $("#levelVal").val()
+      level: $("#levelVal").val(),
     };
     console.log(addPokemon);
     $.post("/api/pokemon", addPokemon, clearCard);
@@ -63,3 +63,20 @@ $("#searchVal").on("click", clearMsg);
 $("#levelVal").on("click", clearMsg);
 $("#search").on("click", pokeSearch);
 $("#submit").on("click", pokeSubmit);
+//animates our seach pokemon buttonwhen clicked on
+$("#search").click(() => {
+  $("#search")
+    .snabbt({
+      position: [0, 0, 0],
+      rotation: [0, 0, 2 * Math.PI],
+      easing: "spring",
+      springConstant: 0.3,
+      springDeceleration: 0.8
+    })
+    .snabbt({
+      position: [0, 0, 0],
+      easing: "spring",
+      springConstant: 0.3,
+      springDeceleration: 0.8
+    });
+});

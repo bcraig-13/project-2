@@ -6,17 +6,21 @@
       {{#each pokemons }}
         <div class="col-md-4">
           <div class="card" style="width: 18rem;">
-            <img src="{{this.sprite}}"  id="object" class="slideUp" alt="...">
+            <img src="{{sprite}}" id="sprite"   alt="pokemon">
             <div class="card-body">
               <h5 class="card-title">Name: {{this.name}}</h5>
               <p class="card-text">Type: {{this.typeOne}} / {{this.typeTwo}}</p>
               <p class="card-text">Level: {{this.level}}</p>
-              <a href="#" class="btn btn-primary">Remove</a>
+              <a href="#" id="animate" class="btn btn-primary">Remove</a>
             </div>
           </div>
         </div>
       {{/each}}
   </div>
 </div>
+
+
+
 <form action="/all-pokemon" method="GET">
 </form>
+
