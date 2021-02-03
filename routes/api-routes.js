@@ -95,10 +95,11 @@ module.exports = function(app) {
     });
   });
   //Problem with this route???
-  app.put("/api/all-pokemon", (req, res) => {
+  app.patch("/api/all-pokemon/:pokemonId", (req, res) => {
     db.Pokemon.update(req.body, {
       where: {
-        id: req.body.id
+        id: req.params.pokemonId,
+        UserId: req.user.id
       }
     }).then(dbPokemon => {
       res.json(dbPokemon);

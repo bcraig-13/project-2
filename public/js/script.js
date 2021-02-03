@@ -6,7 +6,7 @@ function pokeSearch() {
     message.textContent = "Enter a pokemon name.";
     return;
   }
-  $.getJSON(pokeURL, (data) => {
+  $.getJSON(pokeURL, data => {
     const type = data.types;
     console.log(data);
     $("#sprite").attr("src", data.sprites.front_default);
@@ -32,7 +32,7 @@ function pokeSubmit(event) {
       name: $("#pkmnName").text(),
       typeOne: $("#typeOne").text(),
       typeTwo: $("#typeTwo").text(),
-      level: $("#levelVal").val(),
+      level: $("#levelVal").val()
     };
     console.log(addPokemon);
     $.post("/api/pokemon", addPokemon, clearCard);
@@ -69,9 +69,15 @@ function removePkmn() {
 }
 //Problem with this function???
 function updatePkmn() {
+  const level = $(this)
+    .parent()
+    .find(".levelInput")
+    .val();
   const id = $(this).data("id");
   $.ajax(`/api/all-pokemon/${id}`, {
-    type: "UPDATE"
+    type: "PATCH",
+    data: JSON.stringify({ level }),
+    contentType: "application/json; charset=UTF-8"
   }).then(() => {
     location.reload();
   });
