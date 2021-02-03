@@ -41,3 +41,8 @@ body{
   text-transform: uppercase;
 
 }
+
+#message {
+  font-family: Oswald, serif;
+  font-weight: bold;
+}
