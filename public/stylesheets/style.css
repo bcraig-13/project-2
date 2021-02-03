@@ -41,3 +41,17 @@ body{
   text-transform: uppercase;
 
 }
+
+#message {
+  font-family: Oswald, serif;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+#level {
+  display: inline-block;
+}
+
+input {
+  width:60px;
+}

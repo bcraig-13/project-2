@@ -94,4 +94,15 @@ module.exports = function(app) {
       res.json(dbPokemon);
     });
   });
+  //Problem with this route???
+  app.patch("/api/all-pokemon/:pokemonId", (req, res) => {
+    db.Pokemon.update(req.body, {
+      where: {
+        id: req.params.pokemonId,
+        UserId: req.user.id
+      }
+    }).then(dbPokemon => {
+      res.json(dbPokemon);
+    });
+  });
 };
