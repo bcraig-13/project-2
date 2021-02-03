@@ -1,4 +1,5 @@
 function pokeSearch() {
+  window.animateSearch()
   const param = $("#searchVal").val();
   const pokeURL = "https://pokeapi.co/api/v2/pokemon/" + param.toLowerCase();
 
@@ -76,21 +77,4 @@ $("#searchVal").on("click", clearMsg);
 $("#levelVal").on("click", clearMsg);
 $("#search").on("click", pokeSearch);
 $("#submit").on("click", pokeSubmit);
-//animates our seach pokemon buttonwhen clicked on
-$("#search").click(() => {
-  $("#search")
-    .snabbt({
-      position: [0, 0, 0],
-      rotation: [0, 0, 2 * Math.PI],
-      easing: "spring",
-      springConstant: 0.3,
-      springDeceleration: 0.8
-    })
-    .snabbt({
-      position: [0, 0, 0],
-      easing: "spring",
-      springConstant: 0.3,
-      springDeceleration: 0.8
-    });
-});
 $(".delete-pkmn").on("click", removePkmn);
