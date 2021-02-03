@@ -1,6 +1,6 @@
 /* The animation code */
 
-  /* The element to apply the animation to */
+  /* The element (ID) to apply the animation to */
 #sprite{
 	animation-name: slideDown;
 	-webkit-animation-name: slideDown;	
